@@ -1,0 +1,131 @@
+PODS:
+  - AMap3DMap (6.3.1):
+    - AMapFoundation (~> 1.5)
+  - AMapFoundation (1.5.5)
+  - boost-for-react-native (1.63.0)
+  - BVLinearGradient (2.4.4):
+    - React
+  - DoubleConversion (1.1.5)
+  - Folly (2016.09.26.00):
+    - boost-for-react-native
+    - DoubleConversion
+    - GLog
+  - GLog (0.3.4)
+  - QBImagePickerController (3.4.0)
+  - React (0.53.0):
+    - React/Core (= 0.53.0)
+  - react-native-amap3d (1.0.2):
+    - AMap3DMap (~> 6.3.0)
+    - React
+  - React/Core (0.53.0):
+    - yoga (= 0.53.0.React)
+  - React/CxxBridge (0.53.0):
+    - Folly (= 2016.09.26.00)
+    - React/Core
+    - React/cxxreact
+  - React/cxxreact (0.53.0):
+    - boost-for-react-native (= 1.63.0)
+    - Folly (= 2016.09.26.00)
+    - React/jschelpers
+    - React/jsinspector
+  - React/DevSupport (0.53.0):
+    - React/Core
+    - React/RCTWebSocket
+  - React/fishhook (0.53.0)
+  - React/jschelpers (0.53.0):
+    - Folly (= 2016.09.26.00)
+    - React/PrivateDatabase
+  - React/jsinspector (0.53.0)
+  - React/PrivateDatabase (0.53.0)
+  - React/RCTBlob (0.53.0):
+    - React/Core
+  - React/RCTImage (0.53.0):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.53.0):
+    - React/Core
+  - React/RCTText (0.53.0):
+    - React/Core
+  - React/RCTWebSocket (0.53.0):
+    - React/Core
+    - React/fishhook
+    - React/RCTBlob
+  - ReactNativeSearchBar (3.4.2):
+    - React
+  - RNImageCropPicker (0.21.3):
+    - QBImagePickerController
+    - React/Core
+    - RSKImageCropper
+  - RSKImageCropper (2.2.1)
+  - TouchID (4.3.0):
+    - React
+  - yoga (0.53.0.React)
+
+DEPENDENCIES:
+  - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
+  - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
+  - GLog (from `../node_modules/react-native/third-party-podspecs/GLog.podspec`)
+  - react-native-amap3d (from `../node_modules/react-native-amap3d/lib/ios`)
+  - React/Core (from `../node_modules/react-native`)
+  - React/CxxBridge (from `../node_modules/react-native`)
+  - React/DevSupport (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+  - ReactNativeSearchBar (from `../node_modules/react-native-search-bar`)
+  - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
+  - TouchID (from `../node_modules/react-native-touch-id`)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AMap3DMap
+    - AMapFoundation
+    - boost-for-react-native
+    - QBImagePickerController
+    - RSKImageCropper
+
+EXTERNAL SOURCES:
+  BVLinearGradient:
+    :path: "../node_modules/react-native-linear-gradient"
+  DoubleConversion:
+    :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
+  Folly:
+    :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+  GLog:
+    :podspec: "../node_modules/react-native/third-party-podspecs/GLog.podspec"
+  React:
+    :path: "../node_modules/react-native"
+  react-native-amap3d:
+    :path: "../node_modules/react-native-amap3d/lib/ios"
+  ReactNativeSearchBar:
+    :path: "../node_modules/react-native-search-bar"
+  RNImageCropPicker:
+    :path: "../node_modules/react-native-image-crop-picker"
+  TouchID:
+    :path: "../node_modules/react-native-touch-id"
+  yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga"
+
+SPEC CHECKSUMS:
+  AMap3DMap: 7e1b2f2a1628a584f085d7f158d7c9835837e8c2
+  AMapFoundation: 652bd70ba579f48a98bdf0c74d6e62a89a06ca58
+  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  BVLinearGradient: 6d8909e3fc6b089defa4b89d967441fa6827a2ee
+  DoubleConversion: ebb6747c5b66026ad4f97b789c3ceac6f18e57a6
+  Folly: 0e765a0b56a1bf180dcbd51ee178cd3a1e2ab986
+  GLog: ed471a3ad6ad53eefb343a530f15dad283e5ef51
+  QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
+  React: 988a7dbd5626e0dd4f4b63fb444fa7e3d975e5b7
+  react-native-amap3d: 755c7ff25953e2f45b952dac9afc572e87e73877
+  ReactNativeSearchBar: 43b76df06f1a0a04c13e02309129da3c21cd3176
+  RNImageCropPicker: 32ca4b9fef4e1b7b85ba69494242122948117e06
+  RSKImageCropper: 98296ad26b41753f796b6898d015509598f13d97
+  TouchID: b0640fedb86fa2db2fe1df15b61594ad49e76288
+  yoga: 55da126afc384965b96bff46652464373b330add
+
+PODFILE CHECKSUM: c9ea0b607b052014cea7c5e913520cd2484a9df5
+
+COCOAPODS: 1.5.3

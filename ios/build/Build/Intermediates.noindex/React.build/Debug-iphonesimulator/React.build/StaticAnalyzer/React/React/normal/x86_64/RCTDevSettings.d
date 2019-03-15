@@ -1,0 +1,22 @@
+dependencies: \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/wangliang/workshop/personal/rn_basic/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/wangliang/workshop/personal/rn_basic/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/wangliang/workshop/personal/rn_basic/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h
