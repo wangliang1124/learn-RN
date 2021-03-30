@@ -1,10 +1,10 @@
-import "react-native-gesture-handler";
-import React from "react";
+import 'react-native-gesture-handler'
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import React from 'react'
 
-import Home from "./src/pages/Home";
+import Home from './src/pages/Home'
 // import Day2 from "./src/pages/Days/Day2";
 // import Day3 from "./src/pages/Days/Day3";
 // import Day5 from "./src/pages/Days/Day5";
@@ -82,14 +82,14 @@ import Home from "./src/pages/Home";
 //     }
 // );
 // export default App;
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 export default function App() {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Home" component={Home} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
