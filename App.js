@@ -4,8 +4,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 
+import Day2 from './src/pages/Days/Day2'
 import Home from './src/pages/Home'
-// import Day2 from "./src/pages/Days/Day2";
+// import Day1 from './src/pages/Days/Day1'
 // import Day3 from "./src/pages/Days/Day3";
 // import Day5 from "./src/pages/Days/Day5";
 // import Day7 from "./src/pages/Days/Day7";
@@ -49,39 +50,6 @@ import Home from './src/pages/Home'
 //     }
 // }
 
-// const App = createStackNavigator(
-//     {
-//         Home,
-//         // Day2,
-//         // Day3,
-//         // Day5,
-//         // Day7,
-//         // Day8,
-//         // Day9,
-//         // Day10,
-//         // Day11,
-//         // Day13,
-//         // Day14,
-//         // Day15,
-//         // Day16,
-//         // Day17,
-//         // Day18,
-//         // Day19,
-//         // Day20,
-//         // Day22,
-//         // Day23,
-//         // Day24,
-//         // Day26,
-//         // Day27,
-//         // Day28,
-//         // Day30,
-//     },
-//     {
-//         // headerMode: 'none',
-//         initialRouteName: "Home",
-//     }
-// );
-// export default App;
 const Stack = createStackNavigator()
 
 export default function App() {
@@ -89,6 +57,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
+        {/* <Stack.Screen name="Day1" component={Day1} /> */}
+        <Stack.Screen name="Day2" component={Day2} />
       </Stack.Navigator>
     </NavigationContainer>
   )
