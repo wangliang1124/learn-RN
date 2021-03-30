@@ -28,12 +28,13 @@ target 'rn_basic' do
 #   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
 #   pod 'react-native-webgl', :path => '../node_modules/react-native-webgl'
-
-  pod 'ReactNativeSearchBar', :path => '../node_modules/react-native-search-bar'
+ 
 
   pod 'TouchID', :path => '../node_modules/react-native-touch-id'
 
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
+ 
 
 end
 
