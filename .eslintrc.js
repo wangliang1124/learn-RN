@@ -17,6 +17,7 @@ module.exports = {
     'comma-dangle': [0, { functions: 'never' }],
     'space-before-function-paren': 0,
     'react/prop-types': 0,
+    'react/display-name': 0,
     'import/order': [
       'error',
       {
