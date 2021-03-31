@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx'
 import { observer } from 'mobx-react'
 import React from 'react'
 import { Button, Text } from 'react-native'
-import Todo from './store/Todo'
+import Todo from './Todo'
 
 // Model the application state.
 class Timer {

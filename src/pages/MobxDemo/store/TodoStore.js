@@ -1,5 +1,6 @@
 import { makeAutoObservable, runInAction, reaction } from 'mobx'
 import { v4 as uuidv4 } from 'uuid'
+import { getRandomColor } from '~/utils'
 export class TodoStore {
   //   authorStore
   //   transportLayer
@@ -62,8 +63,15 @@ export class TodoStore {
     return todo
   }
 
+  updateTodo = (id) => {
+    const todo = this.todos.find((todo) => todo.id === id)
+    if (todo) {
+      todo.completed = !todo.completed
+    }
+  }
+
   // A Todo was somehow deleted, clean it from the client memory.
-  removeTodo(todo) {
+  removeTodo = (todo) => {
     this.todos.splice(this.todos.indexOf(todo), 1)
     todo.dispose()
   }
@@ -77,6 +85,7 @@ export class TodoModel {
   //   author = null // Reference to an Author object (from the authorStore).
   //   autoSave = true // Indicator for submitting changes in this Todo to the server.
   saveHandler = null // Disposer of the side effect auto-saving this Todo (dispose).
+  backgroundColor = '#fff'
 
   constructor(store, id = uuidv4()) {
     makeAutoObservable(this, {
@@ -90,16 +99,19 @@ export class TodoModel {
     this.store = store
     this.id = id
     this.task = 'Tast ' + Math.random().toString(16).slice(2)
+    this.backgroundColor = getRandomColor()
 
     this.saveHandler = reaction(
       () => this.asJson, // Observe everything that is used in the JSON.
       (json) => {
+        this.store.updateTodoFromServer(json)
         // If autoSave is true, send JSON to the server.
         // if (this.autoSave) {
         //   this.store.transportLayer.saveTodo(json)
         // }
       }
     )
+    console.log('---this.saveHandler ---', this.saveHandler)
   }
 
   // Remove this Todo from the client and the server.
@@ -123,6 +135,12 @@ export class TodoModel {
     this.task = json.task
     // this.author = this.store.authorStore.resolveAuthor(json.authorId)
     // this.autoSave = true
+  }
+
+  handleComplete = () => {
+    console.log('--handleComplete---', this.saveHandler)
+    this.completed = true
+    this.saveHandler && this.saveHandler()
   }
 
   // Clean up the observer.
