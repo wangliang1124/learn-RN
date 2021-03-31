@@ -4,10 +4,10 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 
-import Day2 from './src/pages/Days/Day2'
+import Swiper from './src/pages/Days/Swiper'
 import Home from './src/pages/Home'
+import TabBar from './src/pages/TabBar'
 // import Day1 from './src/pages/Days/Day1'
-// import Day3 from "./src/pages/Days/Day3";
 // import Day5 from "./src/pages/Days/Day5";
 // import Day7 from "./src/pages/Days/Day7";
 // import Day8 from "./src/pages/Days/Day8";
@@ -58,7 +58,8 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
         {/* <Stack.Screen name="Day1" component={Day1} /> */}
-        <Stack.Screen name="Day2" component={Day2} />
+        <Stack.Screen name="Swiper" component={Swiper} />
+        <Stack.Screen name="TabBar" component={TabBar} />
       </Stack.Navigator>
     </NavigationContainer>
   )
