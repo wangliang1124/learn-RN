@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view'
-import Util from '../../utils'
+import Util from '~/utils'
 
 import FacebookTabBar from './FacebookTabBar'
 

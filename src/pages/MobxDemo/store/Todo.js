@@ -2,7 +2,7 @@ import CheckBox from '@react-native-community/checkbox'
 import { observer } from 'mobx-react'
 import React from 'react'
 import { View, Text, Button } from 'react-native'
-import { getRandomColor } from '../../utils'
+import { getRandomColor } from '../../../utils'
 import { TodoStore } from './TodoStore'
 
 class Todo extends React.Component {

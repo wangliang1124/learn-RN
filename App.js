@@ -4,10 +4,10 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 
-import Swiper from './src/pages/Days/Swiper'
-import Home from './src/pages/Home'
-import MobxDemo from './src/pages/MobxDemo'
-import TabBar from './src/pages/TabBar'
+import Home from '~/pages/Home'
+import MobxDemo from '~/pages/MobxDemo'
+import Swiper from '~/pages/Swiper'
+import TabBar from '~/pages/TabBar'
 
 const Stack = createStackNavigator()
 

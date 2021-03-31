@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Image, RefreshControl, ScrollView } from 'react-native'
-import Util from '../../utils'
+import Util from '~/utils'
 
 class TwitterPost extends Component {
   constructor() {

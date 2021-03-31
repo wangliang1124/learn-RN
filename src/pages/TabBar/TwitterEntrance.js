@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { StyleSheet, Animated, Easing } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import Util from '../../utils'
+import Util from '~/utils'
 
 const AnimatedIcon = Animated.createAnimatedComponent(Icon)
 

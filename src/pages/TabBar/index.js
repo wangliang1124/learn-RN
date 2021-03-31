@@ -3,7 +3,6 @@
  */
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React, { Component } from 'react'
-import { Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Facebook from './Facebook'
 import Settings from './Setting'
