@@ -2,15 +2,6 @@ import React, { Component } from 'react'
 import { StyleSheet, StatusBar, TouchableHighlight, View, Text } from 'react-native'
 
 class Home extends Component {
-  constructor(props) {
-    super(props)
-    const d = []
-    for (let i = 0; i < 30; i++) {
-      d[i] = `DAY ${i + 1}`
-    }
-    this.routes = ['Home', 'Swiper', 'TabBar']
-  }
-
   render() {
     const {
       navigation: { navigate },
@@ -20,7 +11,7 @@ class Home extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor="#6a51ae" />
         <View style={styles.gridWrapper}>
-          {this.routes.map((item, index) => {
+          {this.props.routes?.map((item, index) => {
             return (
               <TouchableHighlight
                 underlayColor="#e6e6e6"
