@@ -29,6 +29,10 @@ const Util = {
   key: 'BDKHFSDKJFHSDKFHWEFH-REACT-NATIVE',
 }
 
+export const getRandomColor = function () {
+  return '#' + ('00000' + ((Math.random() * 0x1000000) << 0).toString(16)).substr(-6)
+}
+
 // import {StyleSheet, Platform} from 'react-native';
 
 // export function create(styles: Object): {[name: string]: number} {
