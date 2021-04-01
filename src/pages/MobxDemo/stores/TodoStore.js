@@ -1,6 +1,7 @@
-import { makeAutoObservable, runInAction, reaction } from 'mobx'
+import { makeAutoObservable, runInAction, reaction, action, observable } from 'mobx'
 import { v4 as uuidv4 } from 'uuid'
 import { getRandomColor } from '~/utils'
+
 export class TodoStore {
   //   authorStore
   //   transportLayer
@@ -46,7 +47,7 @@ export class TodoStore {
   updateTodoFromServer(json) {
     let todo = this.todos.find((todo) => todo.id === json.id)
     if (!todo) {
-      todo = new TodoModel(this, json.id)
+      todo = new Todo(this, json.id)
       this.todos.push(todo)
     }
     if (json.isDeleted) {
@@ -58,7 +59,7 @@ export class TodoStore {
 
   // Creates a fresh Todo on the client and the server.
   createTodo = () => {
-    const todo = new TodoModel(this)
+    const todo = new Todo(this)
     this.todos.push(todo)
     return todo
   }
@@ -77,7 +78,7 @@ export class TodoStore {
   }
 }
 
-export class TodoModel {
+export class Todo {
   id = null // Unique id of this Todo, immutable.
   task = ''
   completed = false
