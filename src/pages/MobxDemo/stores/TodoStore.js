@@ -1,19 +1,13 @@
-import { makeAutoObservable, runInAction, reaction, action, observable } from 'mobx'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { makeAutoObservable, runInAction, reaction, autorun, toJS } from 'mobx'
 import { v4 as uuidv4 } from 'uuid'
 import { getRandomColor } from '~/utils'
-
-export class TodoStore {
-  //   authorStore
-  //   transportLayer
+class TodoStore {
   todos = []
   isLoading = true
 
   constructor() {
     makeAutoObservable(this)
-    // this.authorStore = authorStore // Store that can resolve authors.
-    // this.transportLayer = transportLayer // Thing that can make server requests.
-    // this.transportLayer.onReceiveTodoUpdate((updatedTodo) => this.updateTodoFromServer(updatedTodo))
-    this.loadTodos()
   }
 
   // Fetches all Todos from the server.
@@ -22,6 +16,7 @@ export class TodoStore {
     this.fetchTodos().then((fetchedTodos) => {
       runInAction(() => {
         fetchedTodos.forEach((json) => this.updateTodoFromServer(json))
+        // this.todos = fetchedTodos
         this.isLoading = false
       })
     })
@@ -29,14 +24,20 @@ export class TodoStore {
 
   fetchTodos() {
     return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve([
+      setTimeout(async () => {
+        const todolist = await AsyncStorage.getItem('todolist', (err, res) => {
+          console.log('----res---', err, res)
+        })
+        console.log('---- fetchTodos todolist---', todolist)
+        const todoList = JSON.parse(todolist) || [
           {
             id: 1,
             task: 'task1',
             completed: true,
+            backgroundColor: '#fff',
           },
-        ])
+        ]
+        resolve(todoList)
       }, 1000)
     })
   }
@@ -55,12 +56,14 @@ export class TodoStore {
     } else {
       todo.updateFromJson(json)
     }
+    this.saveTodoList()
   }
 
-  // Creates a fresh Todo on the client and the server.
+  // Creates a fresh Todo
   createTodo = () => {
     const todo = new Todo(this)
     this.todos.push(todo)
+    this.saveTodoList()
     return todo
   }
 
@@ -69,12 +72,20 @@ export class TodoStore {
     if (todo) {
       todo.completed = !todo.completed
     }
+    this.saveTodoList()
   }
 
   // A Todo was somehow deleted, clean it from the client memory.
   removeTodo = (todo) => {
     this.todos.splice(this.todos.indexOf(todo), 1)
     todo.dispose()
+    this.saveTodoList()
+  }
+
+  saveTodoList = () => {
+    console.log('----------- savaTodolist ------', toJS(this.todos))
+
+    AsyncStorage.setItem('todolist', JSON.stringify(this.todos.map((todo) => todo.asJson)))
   }
 }
 
@@ -83,9 +94,6 @@ export class Todo {
   task = ''
   completed = false
   store = null
-  //   author = null // Reference to an Author object (from the authorStore).
-  //   autoSave = true // Indicator for submitting changes in this Todo to the server.
-  saveHandler = null // Disposer of the side effect auto-saving this Todo (dispose).
   backgroundColor = '#fff'
 
   constructor(store, id = uuidv4()) {
@@ -102,30 +110,31 @@ export class Todo {
     this.task = 'Tast ' + Math.random().toString(16).slice(2)
     this.backgroundColor = getRandomColor()
 
-    this.saveHandler = reaction(
-      () => this.asJson, // Observe everything that is used in the JSON.
-      (json) => {
-        this.store.updateTodoFromServer(json)
-        // If autoSave is true, send JSON to the server.
-        // if (this.autoSave) {
-        //   this.store.transportLayer.saveTodo(json)
-        // }
-      }
-    )
-    console.log('---this.saveHandler ---', this.saveHandler)
+    // this.saveHandler = reaction(
+    //   () => this.asJson, // Observe everything that is used in the JSON.
+    //   (json) => {
+    //     console.log('--- reaction ---', this.store, json)
+    //     this.store.saveTodoList()
+    //     // If autoSave is true, send JSON to the server.
+    //     // if (this.autoSave) {
+    //     //   this.store.transportLayer.saveTodo(json)
+    //     // }
+    //   }
+    // )
   }
 
   // Remove this Todo from the client and the server.
-  delete() {
-    // this.store.transportLayer.deleteTodo(this.id)
-    this.store.removeTodo(this)
-  }
+  //   delete() {
+  //     this.store.transportLayer.deleteTodo(this.id)
+  //     this.store.removeTodo(this)
+  //   }
 
   get asJson() {
     return {
       id: this.id,
       task: this.task,
       completed: this.completed,
+      backgroundColor: this.backgroundColor,
     }
   }
 
@@ -134,18 +143,16 @@ export class Todo {
     // this.autoSave = false // Prevent sending of our changes back to the server.
     this.completed = json.completed
     this.task = json.task
+    this.backgroundColor = json.backgroundColor
     // this.author = this.store.authorStore.resolveAuthor(json.authorId)
     // this.autoSave = true
   }
 
-  handleComplete = () => {
-    console.log('--handleComplete---', this.saveHandler)
-    this.completed = true
-    this.saveHandler && this.saveHandler()
-  }
-
   // Clean up the observer.
   dispose() {
-    this.saveHandler()
+    // this.store.saveTodoList()
+    // this.saveHandler()
   }
 }
+
+export default new TodoStore()
