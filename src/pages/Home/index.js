@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, StatusBar, TouchableHighlight, View, Text } from 'react-native'
+import { StyleSheet, StatusBar, View, Button } from 'react-native'
 
 class Home extends Component {
   render() {
@@ -11,21 +11,15 @@ class Home extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor="#6a51ae" />
         <View style={styles.gridWrapper}>
-          {this.props.routes?.map((item, index) => {
+          {this.props.routes?.map(({ title, routeName }, index) => {
             return (
-              <TouchableHighlight
-                underlayColor="#e6e6e6"
-                activeOpacity={1}
-                style={styles.grid}
+              <Button
                 onPress={() => {
-                  navigate(item)
+                  navigate(routeName)
                 }}
-                key={item}
-              >
-                <View style={styles.item}>
-                  <Text style={styles.itemText}>{item}</Text>
-                </View>
-              </TouchableHighlight>
+                title={title}
+                key={routeName}
+              ></Button>
             )
           })}
         </View>
@@ -39,17 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
   },
-  gridWrapper: { flex: 1, flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' },
-  grid: {
-    // flex: 1,
-    width: 100,
-    height: 48,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#ccc',
-    backgroundColor: '#eee',
-  },
+  gridWrapper: { flex: 1, flexDirection: 'column' },
   item: {
     justifyContent: 'center',
     alignItems: 'center',
