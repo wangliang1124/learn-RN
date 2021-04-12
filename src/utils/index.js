@@ -50,4 +50,8 @@ export const getRandomColor = function () {
 //   return StyleSheet.create(platformStyles);
 // }
 
+export async function sleep(time) {
+  return new Promise((resolve) => setTimeout(resolve, time))
+}
+
 export default Util
