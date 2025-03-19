@@ -2,7 +2,7 @@ import CheckBox from '@react-native-community/checkbox'
 import { observer } from 'mobx-react'
 import React from 'react'
 import { View, Text, Button } from 'react-native'
-import todoStore from '../stores/todoStore'
+import todoStore from '../stores/TodoStore'
 
 function TodoItem({ todo }) {
   const { updateTodo, removeTodo } = todoStore

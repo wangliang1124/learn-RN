@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler'
 
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
 import React from 'react'
@@ -17,7 +18,6 @@ import SimpleDemo from './pages/StateManagement/Context/SimpleDemo'
 import SimpleDemoUsingHook from './pages/StateManagement/Context/SimpleDemoUsingHook'
 import Swiper from './pages/Swiper'
 import TabBar from './pages/TabBar'
-import Header from './sharedComponents/Header'
 
 const Stack = createStackNavigator()
 
@@ -32,6 +32,7 @@ const routes = [
 ]
 
 export default function App() {
+  AsyncStorage.setItem('MyTest::testKey', '{value:42}')
   return (
     <SafeAreaProvider>
       <NavigationContainer>

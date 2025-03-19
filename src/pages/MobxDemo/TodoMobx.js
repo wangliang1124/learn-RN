@@ -2,7 +2,7 @@ import { observer } from 'mobx-react'
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 import TodoItem from './components/TodoItem'
-import todoStore from './stores/todoStore'
+import todoStore from './stores/TodoStore'
 
 class TodoMobx extends React.Component {
   componentDidMount() {
